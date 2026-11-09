@@ -17,6 +17,7 @@ mkdir -p "$app/Contents/MacOS" "$app/Contents/Resources" "$app/Contents/Framewor
 cp "$root/Info.plist" "$app/Contents/Info.plist"
 cp "$root/AppIcon.icns" "$app/Contents/Resources/AppIcon-1.5.icns"
 cp "$root/devices.json" "$app/Contents/Resources/devices.json"
+cp "$root/GitHubMark.svg" "$root/GitHubMark-NOTICE.txt" "$app/Contents/Resources/"
 cp "$root/engine.py" "$app/Contents/Resources/engine.py"
 mkdir -p "$app/Contents/Resources/en.lproj" "$app/Contents/Resources/zh-Hans.lproj"
 cp "$root/InfoPlist.en.strings" "$app/Contents/Resources/en.lproj/InfoPlist.strings"

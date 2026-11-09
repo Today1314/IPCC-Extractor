@@ -4,6 +4,12 @@
 
 A macOS app for finding and exporting carrier bundles from iPhone and cellular iPad firmware.
 
+## What’s new in 1.1 Beta
+
+- Fixed truncated English text in the About window.
+- Added a GitHub icon beside the project link.
+- The installer replaces the previous version; quit it before updating.
+
 ## Download and install
 
 Download the Apple Silicon DMG from [Releases](https://github.com/Today1314/IPCC-Extractor/releases), open it, and drag the app to Applications. Quit any earlier version normally before replacing it. The first public release is **1.0 Beta**; the earlier locally shared 1.5 build is its predecessor.

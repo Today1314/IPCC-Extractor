@@ -1,0 +1,4 @@
+GitHub mark
+
+Source: https://github.com/primer/octicons/blob/main/icons/mark-github-24.svg
+GitHub and the Invertocat design are trademarks of GitHub, Inc. The mark is used as a link to this project's GitHub page. See https://github.com/logos for GitHub's brand guidelines.

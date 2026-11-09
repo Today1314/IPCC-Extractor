@@ -318,17 +318,31 @@ struct WindowBranding: NSViewRepresentable {
 
 struct AboutView: View {
     @ObservedObject var model: Model
+    private static let githubMark: NSImage? = {
+        guard let url = Bundle.main.url(forResource: "GitHubMark", withExtension: "svg"), let image = NSImage(contentsOf: url) else { return nil }
+        image.isTemplate = true
+        return image
+    }()
     var body: some View {
         VStack(spacing: 12) {
             Image(nsImage: NSApplication.shared.applicationIconImage).resizable().frame(width: 96, height: 96)
             Text(model.tr("IPCC提取工具", "IPCC Extractor")).font(.title2.bold())
-            Text(model.tr("版本 1.0 Beta", "Version 1.0 Beta")).foregroundColor(.secondary)
+            Text(model.tr("版本 1.1 Beta", "Version 1.1 Beta")).foregroundColor(.secondary)
             Divider().padding(.vertical, 4)
             Text(model.tr("从 iPhone 和蜂窝版 iPad 固件中提取运营商配置", "Extract carrier bundles from iPhone and cellular iPad firmware"))
                 .multilineTextAlignment(.center).foregroundColor(.secondary)
-            Link(model.tr("GitHub 项目主页", "GitHub Project"), destination: URL(string: "https://github.com/Today1314/IPCC-Extractor")!)
-                .padding(.top, 3)
-        }.padding(26).frame(width: 360)
+                .fixedSize(horizontal: false, vertical: true)
+                .frame(maxWidth: .infinity)
+            Link(destination: URL(string: "https://github.com/Today1314/IPCC-Extractor")!) {
+                HStack(spacing: 7) {
+                    if let icon = Self.githubMark {
+                        Image(nsImage: icon).renderingMode(.template).resizable().scaledToFit()
+                            .frame(width: 19, height: 19).foregroundColor(.primary)
+                    }
+                    Text(model.tr("GitHub 项目主页", "GitHub Project"))
+                }
+            }.padding(.top, 3)
+        }.padding(26).frame(width: 390)
          .background(WindowBranding(title: model.tr("关于 IPCC提取工具", "About IPCC Extractor")))
     }
 }
@@ -338,7 +352,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     private var aboutWindow: NSWindow?
     func showAbout(model: Model) {
         if aboutWindow == nil {
-            let window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 360, height: 300), styleMask: [.titled, .closable], backing: .buffered, defer: false)
+            let window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 390, height: 360), styleMask: [.titled, .closable], backing: .buffered, defer: false)
             window.isReleasedWhenClosed = false
             window.contentView = NSHostingView(rootView: AboutView(model: model))
             window.center()
