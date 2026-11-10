@@ -12,7 +12,7 @@ A macOS app for finding and exporting carrier bundles from iPhone and cellular i
 
 ## Download and install
 
-Download the Apple Silicon DMG from [Releases](https://github.com/Today1314/IPCC-Extractor/releases), open it, and drag the app to Applications. Quit any earlier version normally before replacing it. The first public release is **1.0 Beta**; the earlier locally shared 1.5 build is its predecessor.
+Download the Apple Silicon DMG from [Releases](https://github.com/Today1314/IPCC-Extractor/releases), open it, and drag the app to Applications. Quit any earlier version normally before replacing it. The first public release is **1.0 Beta**.
 
 Requires an Apple Silicon Mac with macOS 14 or later. The app is ad-hoc signed and is not notarized by Apple. If macOS blocks it, check System Settings → Privacy & Security.
 
